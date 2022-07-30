@@ -1,8 +1,8 @@
 # Scraper
-# Testing Python w/ Selenium and FireFox GeckDriver
+# Python, Selenium, and FireFox GeckoDriver
 
-Installation:
-sudo apt-get install firefox
-sudo apt-get install python3-pip
-sudo pip3 install selenium
+Installation:<br>
+sudo apt-get install firefox<br>
+sudo apt-get install python3-pip<br>
+sudo pip3 install selenium<br>
 wget https://github.com/mozilla/geckodriver/releases/download/v0.31.0/geckodriver-v0.31.0-linux64.tar.gz
