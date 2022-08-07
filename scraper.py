@@ -55,8 +55,9 @@ class Scraper(object):
         browser.refresh()
 
         # Gather data
-        xpath="//*[@id='Status']/table"
         # xpath="//*[@id='Status']/table"
+        xpath="//*[@id="blq-content"]/div[1]"
+        self.invalid.append(line.strip())
 
         # Parses data
         result=self.processOutput(WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.XPATH, xpath))))
