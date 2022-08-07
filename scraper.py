@@ -18,6 +18,10 @@ URL="https://www.cibc.com/en/interest-rates/mortgage-rates.html"
 class Scraper(object):
     def __init__(self):
 
+        self.xpaths=[]
+        xpaths.append("//*[@id="blq-content"]/div[1]","Rates, Prime")
+        # xpaths.append("//*[@id="blq-content"]/div[5]","Rates, Fixed")
+
         # Check input args
         if ("-f" in sys.argv):
             filename=sys.argv[2]
@@ -56,14 +60,13 @@ class Scraper(object):
 
         # Gather data
         # xpath="//*[@id='Status']/table"
-        xpath="//*[@id="blq-content"]/div[1]"
-        self.invalid.append(line.strip())
+        for xpath in self.xpaths:
 
-        # Parses data
-        result=self.processOutput(WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.XPATH, xpath))))
+            if (DEBUG):
+                print(DEBUG_TAG + "executeQuery=" + str(x))
 
-        # Store info
-        self.results.append((ip, result))
+            # Parses data
+            result=self.processOutput(WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.XPATH, xpath))))
 
     # Writes data to temp file and parses it
     def processOutput(self, data):
